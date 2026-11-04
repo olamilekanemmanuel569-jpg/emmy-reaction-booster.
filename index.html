@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emmy Reaction Booster</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f3f7f4;
+    color: #183b2b;
+}
+
+header {
+    background: #075e35;
+    color: white;
+    padding: 22px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 23px;
+}
+
+header p {
+    margin-top: 7px;
+    font-size: 13px;
+    color: #d5f5df;
+}
+
+.container {
+    max-width: 950px;
+    margin: 25px auto;
+    padding: 15px;
+}
+
+.status {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.badge {
+    background: #fff0d8;
+    color: #a56b00;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.card h2 {
+    color: #075e35;
+    font-size: 25px;
+    margin-top: 12px;
+}
+
+.card p {
+    color: #777;
+    font-size: 13px;
+}
+
+.section {
+    background: white;
+    margin-top: 20px;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.section h3 {
+    margin-bottom: 15px;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 8px 0 15px;
+    outline: none;
+}
+
+button {
+    background: #08783f;
+    color: white;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #064e2d;
+}
+
+.reactions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.emoji {
+    background: #e8f5ec;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 23px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #777;
+    font-size: 12px;
+}
+
+@media(max-width:600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>💚 EMMY REACTION BOOSTER</h1>
+    <p>Smart WhatsApp Reaction Dashboard</p>
+</header>
+
+<div class="container">
+
+    <div class="status">
+        <div>
+            <h3>WhatsApp Status</h3>
+            <p id="statusText">Not Connected</p>
+        </div>
+        <span class="badge">OFFLINE</span>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <p>Total Reactions</p>
+            <h2>0</h2>
+        </div>
+
+        <div class="card">
+            <p>Messages Tracked</p>
+            <h2>0</h2>
+        </div>
+
+        <div class="card">
+            <p>Popular Emoji</p>
+            <h2>❤️</h2>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h3>📱 Connect WhatsApp</h3>
+        <p>Connect your WhatsApp account through our secure bot backend.</p>
+        <br>
+        <button onclick="alert('WhatsApp backend connection will be added next!')">
+            Connect WhatsApp
+        </button>
+    </div>
+
+    <div class="section">
+        <h3>❤️ Custom Reaction</h3>
+
+        <label>Choose reaction</label>
+
+        <select id="emoji">
+            <option>❤️</option>
+            <option>😂</option>
+            <option>🔥</option>
+            <option>😍</option>
+            <option>🥰</option>
+            <option>👍</option>
+            <option>👏</option>
+            <option>💯</option>
+        </select>
+
+        <label>Message ID</label>
+        <input type="text" id="messageId"
+        placeholder="Enter message ID">
+
+        <button onclick="react()">
+            Send Reaction
+        </button>
+    </div>
+
+    <div class="section">
+        <h3>🔥 Popular Reactions</h3>
+
+        <div class="reactions">
+            <div class="emoji">❤️</div>
+            <div class="emoji">😂</div>
+            <div class="emoji">🔥</div>
+            <div class="emoji">😍</div>
+            <div class="emoji">💯</div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    EMMY REACTION BOOSTER © 2026
+    <br><br>
+    Developed by Emmy 💚
+</footer>
+
+<script>
+function react() {
+    const emoji = document.getElementById("emoji").value;
+    const id = document.getElementById("messageId").value;
+
+    if (!id.trim()) {
+        alert("Please enter a message ID");
+        return;
+    }
+
+    alert("Dashboard interface ready. WhatsApp backend is not connected yet.");
+}
+</script>
+
+</body>
+  </html>
