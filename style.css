@@ -1,0 +1,56 @@
+:root {
+  --green: #087a4b;
+  --green-dark: #05633d;
+  --mint: #eaf6ef;
+  --ink: #17251e;
+  --muted: #84928a;
+  --line: #e8eee9;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; background: #f7faf8; color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.topbar {
+  height: 68px; padding: 0 max(22px, calc((100% - 1040px)/2));
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,.92); border-bottom: 1px solid var(--line);
+}
+.brand { display:flex; align-items:center; gap:10px; color:var(--ink); text-decoration:none; font-size:13px; font-weight:900; letter-spacing:1px; }
+.brand-mark { display:grid; place-items:center; width:31px; height:31px; border-radius:10px; background:var(--green); color:white; font-size:17px; }
+.brand-light { color:var(--green); }
+.status { color:var(--muted); font-size:10px; font-weight:800; letter-spacing:1px; }
+.status i { display:inline-block; width:7px; height:7px; margin-right:6px; border-radius:50%; background:#e4a33a; }
+.container { width:min(100% - 32px, 560px); margin:56px auto 30px; }
+.intro { text-align:center; margin-bottom:27px; }
+.eyebrow { color:var(--green); font-size:10px; font-weight:850; letter-spacing:1.8px; }
+h1 { margin:12px 0 10px; font-size:clamp(34px, 8vw, 48px); line-height:1.08; letter-spacing:-2px; }
+h1 span { color:var(--green); }
+.subtitle { color:var(--muted); font-size:14px; }
+.card, .result-card { background:white; border:1px solid var(--line); border-radius:20px; padding:25px; box-shadow:0 15px 45px rgba(27,74,48,.06); }
+.field { margin-bottom:22px; }
+label { display:flex; align-items:center; gap:9px; margin-bottom:12px; font-size:13px; font-weight:800; }
+.step { display:grid; place-items:center; width:25px; height:23px; border-radius:7px; color:var(--green); background:var(--mint); font-size:10px; }
+input[type="url"] { width:100%; height:48px; border:1px solid var(--line); border-radius:10px; padding:0 13px; outline:none; font:inherit; font-size:13px; }
+input:focus { border-color:var(--green); box-shadow:0 0 0 3px rgba(8,122,75,.09); }
+small { display:block; margin-top:8px; color:var(--muted); font-size:11px; }
+.divider { height:1px; background:var(--line); margin:4px 0 22px; }
+.counter { margin-left:auto; color:var(--muted); font-size:11px; }
+.emoji-grid { display:grid; grid-template-columns:repeat(5, 1fr); gap:9px; }
+.emoji { height:43px; border:1px solid var(--line); border-radius:10px; background:#fff; font-size:21px; cursor:pointer; transition:.15s; }
+.emoji:hover { transform:translateY(-2px); border-color:#a8d5ba; }
+.emoji.selected { background:var(--mint); border:1.5px solid var(--green); box-shadow:0 0 0 2px rgba(8,122,75,.07); }
+.quantity-control { display:flex; align-items:center; gap:10px; }
+.quantity-control button { width:44px; height:44px; border:1px solid var(--line); border-radius:10px; background:#fff; color:var(--green); font-size:23px; cursor:pointer; }
+#quantity { width:100%; height:44px; border:1px solid var(--line); border-radius:10px; text-align:center; font:inherit; font-weight:800; outline:none; }
+.submit-btn { width:100%; height:49px; border:0; border-radius:11px; background:var(--green); color:white; font-size:13px; font-weight:800; cursor:pointer; box-shadow:0 7px 16px rgba(8,122,75,.18); }
+.submit-btn:hover { background:var(--green-dark); }
+.submit-btn span { margin-left:6px; }
+.notice { margin:14px 4px 0; color:var(--muted); font-size:10px; line-height:1.6; text-align:center; }
+.result-card { display:flex; gap:13px; align-items:flex-start; margin-top:16px; padding:18px; }
+.result-icon { display:grid; place-items:center; flex:0 0 30px; height:30px; border-radius:50%; background:var(--mint); color:var(--green); font-weight:900; }
+.result-card h2 { margin:2px 0 5px; font-size:14px; }
+.result-card p { margin:0; color:var(--muted); font-size:12px; line-height:1.6; overflow-wrap:anywhere; }
+footer { display:flex; justify-content:space-between; margin:55px 2px 0; padding-top:18px; border-top:1px solid var(--line); color:#9aa69e; font-size:9px; font-weight:800; letter-spacing:1px; }
+footer b { color:var(--green); }
+@media (max-width:420px) { .container { margin-top:38px; } .card { padding:19px; } .topbar { padding:0 16px; } }
