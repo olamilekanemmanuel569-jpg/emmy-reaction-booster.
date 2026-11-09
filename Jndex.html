@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#087a4b">
+  <title>Emmy Reaction Booster</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">E</span><span>EMMY<span class="brand-light"> BOOSTER</span></span></a>
+    <span class="status"><i></i> FRONTEND DEMO</span>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p class="eyebrow">✦ WHATSAPP CHANNEL TOOLS</p>
+      <h1>Give every post<br><span>a little reaction.</span></h1>
+      <p class="subtitle">Choose your reactions and set the quantity you want.</p>
+    </section>
+
+    <form class="card" id="reactionForm">
+      <div class="field">
+        <label for="postLink"><span class="step">01</span> Channel post link</label>
+        <input id="postLink" type="url" placeholder="https://whatsapp.com/channel/..." required>
+        <small>Paste the link to the WhatsApp channel post.</small>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="field">
+        <label><span class="step">02</span> Choose your reactions <span class="counter" id="selectedCount">0/5</span></label>
+        <div class="emoji-grid" id="emojiGrid" aria-label="Choose reactions">
+          <button type="button" class="emoji" aria-pressed="false">❤️</button>
+          <button type="button" class="emoji" aria-pressed="false">🔥</button>
+          <button type="button" class="emoji" aria-pressed="false">😍</button>
+          <button type="button" class="emoji" aria-pressed="false">😂</button>
+          <button type="button" class="emoji" aria-pressed="false">👍</button>
+          <button type="button" class="emoji" aria-pressed="false">🙏</button>
+          <button type="button" class="emoji" aria-pressed="false">💯</button>
+          <button type="button" class="emoji" aria-pressed="false">🥰</button>
+          <button type="button" class="emoji" aria-pressed="false">👏</button>
+          <button type="button" class="emoji" aria-pressed="false">😮</button>
+        </div>
+      </div>
+
+      <div class="field quantity-field">
+        <label for="quantity"><span class="step">03</span> Reaction quantity</label>
+        <div class="quantity-control">
+          <button type="button" id="minus" aria-label="Decrease quantity">−</button>
+          <input id="quantity" type="number" min="1" max="1000" value="10" required>
+          <button type="button" id="plus" aria-label="Increase quantity">+</button>
+        </div>
+        <small>Choose a quantity from 1 to 1,000 for your request.</small>
+      </div>
+
+      <button class="submit-btn" type="submit">Preview reaction request <span>↗</span></button>
+      <p class="notice">This GitHub Pages version is a frontend demo. It cannot send WhatsApp reactions by itself.</p>
+    </form>
+
+    <section class="result-card" id="resultCard" hidden aria-live="polite">
+      <div class="result-icon">✓</div>
+      <div>
+        <h2>Request preview ready</h2>
+        <p id="resultText"></p>
+      </div>
+    </section>
+
+    <footer><span>EMMY BOOSTER</span><span>Made with care <b>♥</b></span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
